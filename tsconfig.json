@@ -1,0 +1,43 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"baseUrl": "src",
+		"paths": {
+			"@components/*": ["components/*"],
+			"@constants/*": ["constants/*"],
+			"@hooks/*": ["hooks/*"],
+			"@stores/*": ["stores/*"],
+			"@utils/*": ["utils/*"],
+			"@models/*": ["models/*"],
+			"@styles/*": ["styles/*"],
+		},
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"allowSyntheticDefaultImports": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"*/.ts",
+		"*/.tsx",
+		"helpers/vkn.helper.js"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

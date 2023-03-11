@@ -1,0 +1,153 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 8px 5px;
+	background-color: #222;
+	border-radius: 5px;
+	height: 40px;
+	cursor: pointer;
+	border: 1px solid #222;
+	color: white;
+	font-size: 13px;
+	font-weight: medium;
+	line-height: 19.5;
+	transition: all 300ms ease;
+
+	&:hover {
+		color: #222;
+		border: 1px solid #222;
+		background-color: transparent;
+	}
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.outline {
+	color: #222;
+	border: 1px solid #777;
+	background-color: transparent;
+
+	&:hover {
+		color: #222;
+		border: 1px solid #222;
+		background-color: transparent;
+	}
+}
+
+.primary {
+	background-color: #00A8DE;
+	border: 1px solid #00A8DE;
+	color: white;
+
+	&:hover {
+		background-color: transparent;
+		border: 1px solid #00A8DE;
+		color: #00A8DE;
+	}
+}
+
+.danger {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+
+	&:hover {
+		background-color: red;
+		border: 1px solid red;
+		color: red;
+	}
+}
+
+.link {
+	background-color: #8601af;
+	border: 1px solid #8601af;
+	color: white;
+
+	&:hover {
+		background-color: transparent;
+		border: 1px solid #8601af;
+		color: #8601af;
+	}
+}
+
+.text {
+	border: transparent;
+	background-color: transparent;
+	color: #777;
+	border: transparent;
+	text-align: left;
+	padding: 0;
+	justify-content: start;
+
+	&:hover {
+		border: transparent;
+		background-color: transparent;
+		color: #222;
+	}
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.justifyFlexStart {
+	justify-content: start;
+}
+
+.justifyFlexEnd {
+	justify-content: end;
+}
+
+.sm {
+	height: 32px;
+}
+
+.md {
+	height: 40px;
+}
+
+.lg {
+	height: 50px;
+}
+
+.shadow {
+	box-shadow: 2px 2px 0 2px #222;
+}
+
+.disabled {
+	opacity: 0.75;
+
+	&:not(.disable):hover {
+		cursor: not-allowed;
+	}
+}
+
+.withOutIcon {
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.withIcon {
+	@media (min-width: 768px) {
+		display: none;
+	}
+	path {
+		fill: white;
+	}
+}
+
+.spinner {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.text {
+		margin-left: 10px;
+	}
+}

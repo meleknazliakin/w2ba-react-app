@@ -1,0 +1,68 @@
+.UnAuthContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    flex: 1;
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 40px 0 56px;
+    }
+
+    .formContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 50px;
+        border: 1px solid red;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 472px;
+        margin: 0 auto;
+    }
+}
+
+.AuthContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        background: #ccf3ff;
+
+        .logo{
+            background-color: red;
+        }
+
+        .userInfo{
+            // position: absolute;
+            right: 20px;
+
+            .user {
+                font-size: 18px;
+                color: #046DB5;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    margin-right: 8px;
+                    fill: red;
+                }
+            }
+        }
+    }
+
+    .main {
+        display: flex;
+    }
+}
