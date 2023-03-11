@@ -1,9 +1,10 @@
 import React from "react";
 import { AuthLayout } from "../../components/organisms/Layouts";
+import MoneyTransferTemplate from "../../components/templates/MoneyTransferTemplate";
 
 const MoneyTransfer = () =>
     <AuthLayout>
-        MoneyTransfer
+        <MoneyTransferTemplate />
     </AuthLayout>;
 
 export default MoneyTransfer;

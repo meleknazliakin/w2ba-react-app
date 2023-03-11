@@ -3,9 +3,7 @@
     flex-direction: column;
     gap: 16px 0;
 
-    .buttonContainer {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    Button {
+        margin-top: 30px;
     }
 }

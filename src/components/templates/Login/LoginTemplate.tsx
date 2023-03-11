@@ -25,8 +25,6 @@ const LoginTemplate = () => {
             setTimeout(() => {
                 setLoading(false);
             }, 500);
-            
-            // setLoading(false);
         },
     });
 
@@ -58,7 +56,6 @@ const LoginTemplate = () => {
                 fullWidth
                 lg />
 
-            <div className={Styles.buttonContainer}>
                 <Button type="submit" disabled={loading} primary>
                     <div className={Styles.button}>
                         {
@@ -71,7 +68,6 @@ const LoginTemplate = () => {
                         }
                     </div>
                 </Button>
-            </div>
         </form>
     );
 };
