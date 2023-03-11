@@ -1,5 +1,4 @@
 .NavigationContainer {
-  background-color: pink;
   height: 50px;
   display: flex;
   align-items: center;
@@ -8,5 +7,7 @@
   .navItem {
     padding: 0 16px;
     font-size: 20px;
+    text-decoration: none;
+    color: #046DB5;
   }
 }

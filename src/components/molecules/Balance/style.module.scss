@@ -1,0 +1,36 @@
+.BalanceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  border: 1px solid #ccf3ff;
+  background: linear-gradient(to bottom, #ccf3ff, #00a8de);
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  border-radius: 20px;
+  
+  .balance {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-bottom: 12px;
+    span {
+      color: #046DB5;
+      font-size: 20px;
+      margin-left: 8px;
+      font-weight: 500;
+    }
+  }
+
+  .button {
+    margin-top: 40px;
+    text-decoration: none;
+    border: 1px solid #046DB5;
+    background-color: #046DB5;
+    color: white;
+    border-radius: 8px;
+    padding: 16px 32px;
+  }
+}

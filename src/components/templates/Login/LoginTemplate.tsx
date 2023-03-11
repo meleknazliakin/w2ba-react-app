@@ -59,7 +59,7 @@ const LoginTemplate = () => {
                 lg />
 
             <div className={Styles.buttonContainer}>
-                <Button type="submit" disabled={loading}>
+                <Button type="submit" disabled={loading} primary>
                     <div className={Styles.button}>
                         {
                             loading ?

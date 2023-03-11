@@ -13,7 +13,14 @@ const AuthLayout: FC<IAthProps> = ({
   return (
     <div className={Styles.AuthContainer}>
       <div className={Styles.header}>
-        <div className={Styles.logo}>LOGO</div>
+        <div className={Styles.logo}>
+          <img src='w2ba.png'/>
+        </div>
+
+        <div className={Styles.navigationContainer}>
+          <Navigation />
+        </div>
+
         <div className={Styles.userInfo}>
           <div className={Styles.user}>
             <SVG src="/icons/user-duble.svg" width={20} />
@@ -24,10 +31,9 @@ const AuthLayout: FC<IAthProps> = ({
             </div>
           </Button>
         </div>
+        
       </div>
-      <div className={Styles.navigationContainer}>
-        <Navigation />
-      </div>
+    
       <div className={Styles.main}>
         {children}
       </div>

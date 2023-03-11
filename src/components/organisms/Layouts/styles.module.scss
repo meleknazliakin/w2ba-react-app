@@ -9,8 +9,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        padding: 40px 0 56px;
+        padding: 40px;
+
+        img {
+            height: 120px;
+        }
     }
 
     .formContainer {
@@ -18,7 +21,9 @@
         display: flex;
         flex-direction: column;
         padding: 100px 50px;
-        border: 1px solid red;
+        border: 1px solid #ccf3ff;
+        border-top: 0;
+        border-bottom: 0;
         border-radius: 8px;
         width: 100%;
         max-width: 472px;
@@ -36,17 +41,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 40px;
-        background: #ccf3ff;
+        padding: 20px 40px;
+        border-bottom: 1px solid #ccf3ff;
 
         .logo{
-            background-color: red;
+            img{
+                height: 100px;
+            }
         }
 
         .userInfo{
-            // position: absolute;
-            right: 20px;
-
             .user {
                 font-size: 18px;
                 color: #046DB5;

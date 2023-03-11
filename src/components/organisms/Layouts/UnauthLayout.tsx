@@ -7,7 +7,9 @@ const UnauthLayout: FC<IUnathProps> = ({
 }) => {
     return (
         <div className={Styles.UnAuthContainer}>
-            <div className={Styles.logo}>LOGO</div>
+            <div className={Styles.logo}>
+                <img src='w2ba.png' />
+            </div>
             <div className={Styles.formContainer}>
                 {children}
             </div>
