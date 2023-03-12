@@ -1,5 +1,6 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
+import { useNavigate } from "react-router-dom";
 import { Col, Container, Row } from 'react-bootstrap';
 import useUserStore from '../../../store/userStore';
 import Button from '../../atoms/Button';
@@ -9,6 +10,11 @@ import Styles from './style.module.scss';
 export const Header = () => {
   const { logout } = useUserStore();
   const { user } = useUserStore((state) => state);
+  const navigate = useNavigate();
+  const logoutFunc = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <Container>
@@ -25,11 +31,7 @@ export const Header = () => {
           <div className={Styles.user}>
             <SVG src="/icons/user-duble.svg" width={20} />
             {user.name}</div>
-          <Button primary sm onClick={() => logout()}>
-            <div className={Styles.button}>
-              Logout
-            </div>
-          </Button>
+          <Button sm onClick={() => logoutFunc()} text='Logout' />
         </Col>
       </Row>
 
@@ -43,11 +45,7 @@ export const Header = () => {
               <div className={Styles.user}>
                 <SVG src="/icons/user-duble.svg" width={20} />
                 {user.name}</div>
-              <Button primary sm onClick={() => logout()}>
-                <div className={Styles.button}>
-                  Logout
-                </div>
-              </Button>
+              <Button sm onClick={() => logoutFunc()} text='Logout' />
             </Col>
           </Row>
 

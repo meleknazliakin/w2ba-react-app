@@ -1,7 +1,5 @@
 import { create } from 'zustand';
-
 import { loginService } from '../../services/authServices';
-import { api } from '../../services/api';
 import { IUserActions, IUserState, UserType } from './models';
 
 const initialState: IUserState = {
@@ -58,6 +56,7 @@ const useUserStore = create<IUserState & IUserActions>()((set, get) => ({
 		localStorage.removeItem('user');
 		localStorage.removeItem('lastTransfers');
 		localStorage.removeItem('savedTransfers');
+		localStorage.removeItem('balance');
 	},
 }));
 

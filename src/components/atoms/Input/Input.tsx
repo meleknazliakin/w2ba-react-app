@@ -18,8 +18,6 @@ const Input: FC<InputProps> = ({
 	id,
 	className,
 	message,
-	leftIcon,
-	rightIcon,
 	autoFocus,
 	maxLength,
 	height,
@@ -28,7 +26,6 @@ const Input: FC<InputProps> = ({
 	lg,
 	md,
 	shadow,
-	rightText,
 	onChange,
 	onBlur,
 	onFocus,
@@ -42,15 +39,12 @@ const Input: FC<InputProps> = ({
 			[Styles.disabled]: disabled,
 			[Styles.error]: error,
 			[Styles.message]: message,
-			[Styles.left]: leftIcon,
-			[Styles.right]: rightIcon,
 			[Styles.label]: label,
 			[Styles.sm]: sm,
 			[Styles.md]: md,
 			[Styles.lg]: lg,
 			[Styles.shadow]: shadow, 
-			[Styles.borders]: border,  
-			[Styles.rightText]: rightText         
+			[Styles.borders]: border,       
 		},
 		className
 	);
@@ -110,12 +104,7 @@ const Input: FC<InputProps> = ({
 						<SVG src={showPassword ? '/icons/eye.svg' : '/icons/no-eye.svg'} />
 					</div> : null
 			}
-			{
-				leftIcon ? <div className={Styles.leftIcon}><SVG src={leftIcon} /></div> : null
-			}
-			{
-				rightIcon ? <div className={Styles.rightIcon}><SVG src={rightIcon} /></div> : null
-			}
+			
 
 		</label>
 	);

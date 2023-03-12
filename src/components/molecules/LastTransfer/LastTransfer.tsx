@@ -9,9 +9,9 @@ const LastTransfer = () => {
       <div className={Styles.header}>Last Transfers</div>
       <div className={Styles.transfers}>
         {
-          transfers.map(transfer => {
+          transfers.map((transfer, index) => {
             return (
-              <div key={transfer.iban} className={Styles.item}>
+              <div key={index} className={Styles.item}>
                 <div className={Styles.date}>{transfer.date}</div>
                 <div className={Styles.iban}>{transfer.iban}</div>
                 <div className={Styles.price}>{transfer.amount}</div>

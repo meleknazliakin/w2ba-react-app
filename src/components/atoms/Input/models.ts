@@ -13,8 +13,6 @@ export type InputProps = {
 	id?: string;
 	height?: number;
 	className?: string;
-	leftIcon?: string;
-	rightIcon?: string;
 	message?: string;
 	sm?: boolean;
 	lg?: boolean;
@@ -23,7 +21,6 @@ export type InputProps = {
 	autoFocus?: boolean;
 	maxLength?: number;
 	border?: boolean;
-	rightText?: boolean;
 	onChange?: (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
 	onBlur?: (e: FocusEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;
 	onFocus?: (e: FocusEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => void;

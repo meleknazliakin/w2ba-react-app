@@ -62,14 +62,6 @@
 	.password {
 		top: 27px;
 	}
-
-	.leftIcon {
-		top: 27px;
-	}
-
-	.rightIcon {
-		top: 27px;
-	}
 }
 
 .fullWidth {
@@ -86,56 +78,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.leftIcon {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.left {
-	.input {
-		padding-left: 40px;
-	}
-
-	.leftIcon {
-		svg {
-			width: 16px;
-			height: 16px;
-		}
-	}
-}
-
-.rightIcon {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.right {
-	.input {
-		padding-right: 40px;
-	}
-
-	.rightIcon {
-		svg {
-			width: 16px;
-			height: 16px;
-		}
-	}
 }
 
 .message {
@@ -230,11 +172,5 @@
 .borders {
 	.input {
 		border: 2px solid $dark;
-	}
-}
-
-.rightText {
-	.input {
-		text-align: right;
 	}
 }

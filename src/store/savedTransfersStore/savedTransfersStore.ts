@@ -15,10 +15,11 @@ const useSavedTransfersStore = create<ISavedTransfersState & ISavedTransfersActi
     fillSavedTransfersFromDb: async ( username: string ) => {
         const savedTransfersResponse = await getSavedTransfers(username);
         if(savedTransfersResponse.status) {
+            let initialTransfers : any = [];
             savedTransfersResponse.data.transfers.forEach(transfer => {
-                get().transfers.push(transfer);
-                set(get());
-                localStorage.setItem("savedTransfersStore", JSON.stringify(get().transfers));
+                initialTransfers.push(transfer);
+                set( { transfers: initialTransfers });
+                localStorage.setItem("savedTransfers", JSON.stringify(get().transfers));
             });
         }
     },
@@ -26,7 +27,7 @@ const useSavedTransfersStore = create<ISavedTransfersState & ISavedTransfersActi
     addSavedTransfer: async (data: { iban: string, name: string, amount: number, currency: string }) => {
         get().transfers.push(data);
         set(get());
-        localStorage.setItem("savedTransfersStore", JSON.stringify(get().transfers));
+        localStorage.setItem("savedTransfers", JSON.stringify(get().transfers));
     },
 }));
 

@@ -85,11 +85,7 @@ const BalanceTemplate = () => {
               error={formik.errors.amount && formik.touched.amount ? formik.errors.amount : ''}
               fullWidth
               md />
-            <Button type="submit" primary>
-              <div className={Styles.button}>
-                Load
-              </div>
-            </Button>
+            <Button type="submit" text='Load'/>
           </form>
         </Col>
         <Col lg={5} xs={12} className="d-flex justify-content-center"> <BalanceCard viewBtn={false} /></Col>

@@ -8,7 +8,7 @@ const BalanceCard = ({ viewBtn }) => {
 
     return (
     <div className={Styles.BalanceContainer}>
-      <div className={Styles.balance}>Your Balance: <span>{amount} TL</span></div>
+      <div className={Styles.balance}>Your Balance: <span>{amount.toFixed(2)} TL</span></div>
       <div className={Styles.balance}>Last Update date: <span>23/02/12</span></div>
       {viewBtn && <Link className={Styles.button} to={'/balance'}>Load to Wallet</Link>}
     </div>

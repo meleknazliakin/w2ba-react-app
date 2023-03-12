@@ -29,7 +29,9 @@ const LoginTemplate = () => {
             fillLastTransfersFromDb(user.name);
             fillSavedTransfersFromDb(user.name);
 
-            setLoading(false);
+            setTimeout(() => {
+                setLoading(false);
+            }, 500);
         }
     });
 
@@ -39,11 +41,11 @@ const LoginTemplate = () => {
                 id="email"
                 name="email"
                 type="email"
-                label="E-posta"
+                label="E-mail"
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder="E-posta adresiniz"
+                placeholder="Your email"
                 error={formik.errors.email && formik.touched.email ? formik.errors.email : ''}
                 fullWidth
                 lg />
@@ -52,27 +54,16 @@ const LoginTemplate = () => {
                 id="password"
                 name="password"
                 type="password"
-                label="Şifre"
+                label="Password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder="Şifreniz"
+                placeholder="Your password"
                 error={formik.errors.password && formik.touched.password ? formik.errors.password : ''}
                 fullWidth
                 lg />
 
-            <Button type="submit" disabled={loading} primary>
-                <div className={Styles.button}>
-                    {
-                        loading ?
-                            <>
-                                <SVG src="/icons/spinner.svg" className={Styles.buttonIcon} width={24} />
-                                <span className={Styles.text}>Giriş Yapılıyor</span>
-                            </>
-                            : 'Giriş Yap'
-                    }
-                </div>
-            </Button>
+            <Button type="submit" text="Sign in" disabled={loading} />
         </form>
     );
 };

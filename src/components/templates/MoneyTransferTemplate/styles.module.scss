@@ -3,5 +3,9 @@
     display: flex;
     flex-direction: column;
     gap: 16px 0;
+
+    .select{
+      z-index: 5;
+    }
   }
 }

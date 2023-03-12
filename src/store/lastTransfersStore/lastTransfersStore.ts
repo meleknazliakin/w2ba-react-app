@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { ILastTransfersState, ITransferModel, ILastTransfersActions } from './models';
+import { ILastTransfersState, ILastTransfersActions } from './models';
 import { getLastTransfers } from "../../services/lastTransfersService";
 
 const localStorageTransferData = localStorage.getItem("lastTransfers");
@@ -15,9 +15,10 @@ const useLastTransfersStore = create<ILastTransfersState & ILastTransfersActions
     fillLastTransfersFromDb: async ( username: string ) => {
         const lastTransfersResponse = await getLastTransfers(username);
         if(lastTransfersResponse.status) {
+            let initialTransfers : any = [];
             lastTransfersResponse.data.transfers.forEach(transfer => {
-                get().transfers.push(transfer);
-                set(get());
+                initialTransfers.push(transfer);
+                set({ transfers : initialTransfers });
                 localStorage.setItem("lastTransfers", JSON.stringify(get().transfers));
             });
         }

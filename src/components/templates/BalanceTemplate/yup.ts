@@ -3,18 +3,20 @@ import * as Yup from 'yup';
 export const balanceValidation = Yup.object().shape({
 	creditCardNumber: Yup
 		.number()
-		.min(2, 'Min 2')
-		.required('E-posta adresi zorunludur.'),
+		.min(16, 'Credit card number must be 16 digits')
+		.max(16, 'Credit card number must be 16 digits')
+		.required('Credit card number is mandatory'),
 	cvv: Yup
 		.number()
-		.min(3, 'Şifreniz en az 6 karakterden oluşmalıdır')
-		.required('Şifre zorunludur'),
+		.min(3, 'CVV must be 3 digits')
+		.max(3, 'CVV must be 3 digits')
+		.required('CVV is mandatory'),
 	expireDate: Yup
 		.string()
-		.min(1, 'Şifreniz en az 6 karakterden oluşmalıdır')
-		.required('Şifre zorunludur'),
+		.min(5, 'You should write expire date for example 05/25')
+		.min(5, 'You should write expire date for example 05/25')
+		.required('Expire date is mandatory'),
 	amount: Yup
 		.number()
-		.min(1, 'Şifreniz en az 6 karakterden oluşmalıdır')
-		.required('Şifre zorunludur'),
+		.required('Amount is mandatory'),
 });
