@@ -1,0 +1,48 @@
+@import "./../../../index.scss";
+
+.HeaderContainerDesktop {
+  align-items: center;
+  margin-bottom: 50px;
+  
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.HeaderContainerMobile {
+  margin-bottom: 30px;
+
+  @media only screen and (min-width: 801px) {
+    display: none;
+  }
+}
+
+.navigationContainer{
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  .user {
+    font-size: 18px;
+    color: $darkBlue;
+    margin-bottom: 8px;
+    
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+      fill: $darkBlue;
+    }
+  }
+}
+
+.logo {
+  img {
+    height: 100px;
+  }
+}

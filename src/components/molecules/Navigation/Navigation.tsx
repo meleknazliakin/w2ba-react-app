@@ -1,14 +1,14 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Styles from './style.module.scss';
 
 const Navigation = () => {
   return (
-    <div className={Styles.NavigationContainer}>
-      <Link className={Styles.navItem} to={'/'}>Dashboard</Link>
-      <Link className={Styles.navItem} to={'/money-transfer'}>Money Transfer</Link>
-      <Link className={Styles.navItem} to={'/balance'}>Balance</Link>
-    </div>
+    <>
+      <Col xs={4}><Link to={'/'}>Dashboard</Link></Col>
+      <Col xs={4}><Link to={'/money-transfer'}>Money Transfer</Link></Col>
+      <Col xs={4}><Link to={'/balance'}>Balance</Link></Col>
+    </>
   );
 };
 
