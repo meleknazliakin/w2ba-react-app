@@ -7,15 +7,15 @@ https://w2ba-react-app.vercel.app/
 
 Use the package manager [npm](https://www.npmjs.com/) to install all packages (package.json).
 
-bash
+```bash
 npm install
-
+```
 
 ## How to run
 
-bash
+```bash
 npm start
-
+```
 
 ## Used Technologies
 
