@@ -1,21 +1,25 @@
 import React from 'react';
+import useLastTransfersStore from "../../../store/lastTransfersStore";
 import Styles from './style.module.scss';
 
 const LastTransfer = () => {
+  const { transfers } = useLastTransfersStore((state) => state);
   return (
     <div className={Styles.LastTransferContainer}>
       <div className={Styles.header}>Last Transfers</div>
       <div className={Styles.transfers}>
-        <div className={Styles.item}>
-          <div className={Styles.date}>07/01/2023</div>
-          <div className={Styles.iban}>TR76 0009 9012 3456 7800 1000 01</div>
-          <div className={Styles.price}>100 TL</div>
-        </div>
-        <div className={Styles.item}>
-          <div className={Styles.date}>07/01/2023</div>
-          <div className={Styles.iban}>TR76 0009 9012 3456 7800 1000 01</div>
-          <div className={Styles.price}>100 TL</div>
-        </div>
+        {
+          transfers.map(transfer => {
+            return (
+              <div key={transfer.iban} className={Styles.item}>
+                <div className={Styles.date}>{transfer.date}</div>
+                <div className={Styles.iban}>{transfer.iban}</div>
+                <div className={Styles.price}>{transfer.amount}</div>
+                <div className={Styles.currency}>{transfer.currency}</div>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   );

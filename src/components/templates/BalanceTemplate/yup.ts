@@ -1,13 +1,20 @@
 import * as Yup from 'yup';
 
 export const balanceValidation = Yup.object().shape({
-	email: Yup
-		.string()
-		.email('Lütfen geçerli bir e-posta adresi giriniz.')
-		.max(64, 'E-posta adresiniz 64 karakterden fazla olamaz.')
+	creditCardNumber: Yup
+		.number()
+		.min(2, 'Min 2')
 		.required('E-posta adresi zorunludur.'),
-	password: Yup
+	cvv: Yup
+		.number()
+		.min(3, 'Şifreniz en az 6 karakterden oluşmalıdır')
+		.required('Şifre zorunludur'),
+	expireDate: Yup
 		.string()
-		.min(6, 'Şifreniz en az 6 karakterden oluşmalıdır')
+		.min(1, 'Şifreniz en az 6 karakterden oluşmalıdır')
+		.required('Şifre zorunludur'),
+	amount: Yup
+		.number()
+		.min(1, 'Şifreniz en az 6 karakterden oluşmalıdır')
 		.required('Şifre zorunludur'),
 });

@@ -19,7 +19,6 @@
 
     .item {
       display: flex;
-      min-width: 500px;
       margin-top: 8px;
 
       .date {
@@ -31,7 +30,11 @@
       }
 
       .price {
-        width: 100px;
+        width: 50px;
+      }
+
+      .currency {
+        width: 25px;
       }
     }
   }

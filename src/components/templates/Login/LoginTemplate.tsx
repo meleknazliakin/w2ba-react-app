@@ -6,12 +6,16 @@ import { loginValidation } from './yup';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
 import useUserStore from '../../../store/userStore';
+import useLastTransfersStore from '../../../store/lastTransfersStore';
+import useSavedTransfersStore from '../../../store/savedTransfersStore';
 import Styles from './styles.module.scss';
 
 const LoginTemplate = () => {
     const { login } = useUserStore();
+    const { user } = useUserStore((state) => state);
     const [loading, setLoading] = useState<boolean>(false);
-
+    const { fillLastTransfersFromDb } = useLastTransfersStore();
+    const { fillSavedTransfersFromDb } = useSavedTransfersStore();
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -21,10 +25,12 @@ const LoginTemplate = () => {
         onSubmit: async (values) => {
             setLoading(true);
             login(values);
-            setTimeout(() => {
-                setLoading(false);
-            }, 500);
-        },
+
+            fillLastTransfersFromDb(user.name);
+            fillSavedTransfersFromDb(user.name);
+
+            setLoading(false);
+        }
     });
 
     return (
@@ -55,18 +61,18 @@ const LoginTemplate = () => {
                 fullWidth
                 lg />
 
-                <Button type="submit" disabled={loading} primary>
-                    <div className={Styles.button}>
-                        {
-                            loading ?
-                                <>
-                                    <SVG src="/icons/spinner.svg" className={Styles.buttonIcon} width={24} />
-                                    <span className={Styles.text}>Giriş Yapılıyor</span>
-                                </>
-                                : 'Giriş Yap'
-                        }
-                    </div>
-                </Button>
+            <Button type="submit" disabled={loading} primary>
+                <div className={Styles.button}>
+                    {
+                        loading ?
+                            <>
+                                <SVG src="/icons/spinner.svg" className={Styles.buttonIcon} width={24} />
+                                <span className={Styles.text}>Giriş Yapılıyor</span>
+                            </>
+                            : 'Giriş Yap'
+                    }
+                </div>
+            </Button>
         </form>
     );
 };

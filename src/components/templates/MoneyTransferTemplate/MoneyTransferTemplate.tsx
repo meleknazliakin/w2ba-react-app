@@ -3,13 +3,25 @@ import { useFormik } from 'formik';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Select from 'react-select';
 import Button from '../../atoms/Button';
 import Input from '../../atoms/Input';
 import BalanceCard from '../../molecules/Balance';
 import { sendMoneyValidation } from './yup';
+import useBalanceStore from "../../../store/balanceStore";
+import useLastTransfersStore from "../../../store/lastTransfersStore";
 import Styles from './styles.module.scss';
 
 const MoneyTransferTemplate = () => {
+  const { amount } = useBalanceStore((state) => state);
+  const { updateBalance } = useBalanceStore();
+  const { addTransfer } = useLastTransfersStore();
+
+  const currencies = [
+    { value: 'TRY', label: 'TRY' },
+    { value: 'USD', label: 'USD' },
+    { value: 'EUR', label: 'EUR' }
+  ];
   const formik = useFormik({
     initialValues: {
       iban: '',
@@ -17,8 +29,17 @@ const MoneyTransferTemplate = () => {
       note: '',
     },
     validationSchema: sendMoneyValidation,
-    onSubmit: async (values) => {
-      console.log('onSubmit', values);
+    onSubmit: async (values: any) => {
+      let newAmount = amount - values.amount;
+      updateBalance({
+        newAmount: newAmount
+      });
+      addTransfer({
+        iban: values.iban,
+        date: "Today",
+        amount: values.amount,
+        currency: "TRY"
+      });
     },
   });
   return (
@@ -51,6 +72,11 @@ const MoneyTransferTemplate = () => {
               error={formik.errors.amount && formik.touched.amount ? formik.errors.amount : ''}
               fullWidth
               md />
+
+            <Select
+              id="currency"
+              name="currency"
+              options={currencies} />
 
             <Input
               id="note"

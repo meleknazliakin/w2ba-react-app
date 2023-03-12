@@ -56,6 +56,8 @@ const useUserStore = create<IUserState & IUserActions>()((set, get) => ({
 	logout: () => {
 		set(initialState);
 		localStorage.removeItem('user');
+		localStorage.removeItem('lastTransfers');
+		localStorage.removeItem('savedTransfers');
 	},
 }));
 

@@ -17,11 +17,10 @@
 
     .item {
       display: flex;
-      min-width: 500px;
       margin-top: 8px;
 
       .name {
-        width: 100px;
+        width: 150px;
       }
 
       .iban {
@@ -29,7 +28,11 @@
       }
 
       .price {
-        width: 100px;
+        width: 50px;
+      }
+
+      .currency {
+        width: 25px;
       }
     }
   }

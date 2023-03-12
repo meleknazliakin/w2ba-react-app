@@ -7,9 +7,13 @@ import Button from '../../atoms/Button';
 import Input from '../../atoms/Input';
 import BalanceCard from '../../molecules/Balance';
 import { balanceValidation } from './yup';
+import useBalanceStore from "../../../store/balanceStore";
 import Styles from './styles.module.scss';
 
 const BalanceTemplate = () => {
+  const { amount } = useBalanceStore((state) => state);
+  const { updateBalance } = useBalanceStore();
+
   const formik = useFormik({
     initialValues: {
       creditCardNumber: '',
@@ -18,9 +22,12 @@ const BalanceTemplate = () => {
       amount: '',
     },
     validationSchema: balanceValidation,
-    onSubmit: async (values) => {
-      console.log('onSubmit', values);
-    },
+    onSubmit: async (values: any) => {
+      let newAmount = +amount + +values.amount;
+      updateBalance({
+        newAmount: newAmount
+      });
+    }
   });
 
   return (
