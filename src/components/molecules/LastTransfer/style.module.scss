@@ -1,3 +1,5 @@
+@import './../../../index.scss';
+
 .LastTransferContainer {
   display: flex;
   flex-direction: column;
@@ -5,9 +7,9 @@
 
   .header{
     font-size: 20px;
-    border-bottom: 1px solid #046DB5;
+    border-bottom: 1px solid $darkBlue;
     font-weight: 500;
-    color: #046DB5;
+    color: $darkBlue;
   }
 
   .transfers {

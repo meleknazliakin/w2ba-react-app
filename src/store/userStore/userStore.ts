@@ -26,7 +26,7 @@ const useUserStore = create<IUserState & IUserActions>()((set, get) => ({
 				error: ''
 			});
 
-			localStorage.setItem('user', JSON.stringify({ ...response?.data.user, username: response?.data.user.name }));
+			localStorage.setItem('user', JSON.stringify({ ...response?.data.user, name: response?.data.user.name }));
 		}
 		else {
 			localStorage.removeItem('user');

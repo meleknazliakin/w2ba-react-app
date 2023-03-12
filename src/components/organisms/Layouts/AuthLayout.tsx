@@ -9,12 +9,13 @@ import Styles from './styles.module.scss';
 const AuthLayout: FC<IAthProps> = ({
   children
 }) => {
-  const { user, isAuthentication } = useUserStore((state) => state);
+  const { logout } = useUserStore();
+  const { user } = useUserStore((state) => state);
   return (
     <div className={Styles.AuthContainer}>
       <div className={Styles.header}>
         <div className={Styles.logo}>
-          <img src='w2ba.png'/>
+          <img src='w2ba.png' />
         </div>
 
         <div className={Styles.navigationContainer}>
@@ -25,15 +26,15 @@ const AuthLayout: FC<IAthProps> = ({
           <div className={Styles.user}>
             <SVG src="/icons/user-duble.svg" width={20} />
             {user.name}</div>
-          <Button type="submit" primary sm>
+          <Button primary sm onClick={() => logout()}>
             <div className={Styles.button}>
-              Güvenli Çıkış
+              Logout
             </div>
           </Button>
         </div>
-        
+
       </div>
-    
+
       <div className={Styles.main}>
         {children}
       </div>

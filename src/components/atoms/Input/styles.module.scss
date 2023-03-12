@@ -1,14 +1,16 @@
+@import "./../../../index.scss";
+
 .container {
 	display: flex;
 	flex-direction: column;
 	min-height: 40px;
 	position: relative;
-	
+
 	.label {
 		font-size: 14px;
 		font-weight: medium;
 		line-height: 21px;
-		color: #222;
+		color: $dark;
 		height: 21px;
 	}
 
@@ -16,34 +18,34 @@
 		font-size: 11px;
 		font-weight: normal;
 		line-height: 16.5px;
-		color: #777;
+		color: $gray;
 		margin-bottom: 5px;
 	}
 
 	.input {
 		height: 40px;
 		padding: 0 16px;
-		border: 1px solid #777;
+		border: 1px solid $gray;
 		border-radius: 5px;
 		font-size: 14px;
 		font-weight: normal;
 		line-height: 21px;
-		color: #222;
-		background-color: white;
+		color: $dark;
+		background-color: $white;
 		outline: none;
-		z-index: 2; 
+		z-index: 2;
 
 		&::placeholder {
-			color: #777;
+			color: $gray;
 		}
 
 		&:-webkit-autofill,
-		&:-webkit-autofill:hover, 
+		&:-webkit-autofill:hover,
 		&:-webkit-autofill:focus {
-			border: 1px solid #777;
-		  -webkit-text-fill-color: #09071F;
-		  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-		  transition: background-color 5000s ease-in-out 0s;
+			border: 1px solid $gray;
+			-webkit-text-fill-color: $dark;
+			-webkit-box-shadow: 0 0 0px 1000px $white inset;
+			transition: background-color 5000s ease-in-out 0s;
 		}
 	}
 }
@@ -56,11 +58,11 @@
 	.input {
 		margin-top: 6px;
 	}
-	
+
 	.password {
 		top: 27px;
 	}
-	
+
 	.leftIcon {
 		top: 27px;
 	}
@@ -143,10 +145,10 @@
 		margin-bottom: 6px;
 
 		&::placeholder {
-			color:rgba(0, 128, 0, 0.7);
+			color: rgba(0, 128, 0, 0.7);
 		}
 	}
-	
+
 	.error {
 		color: green;
 	}
@@ -159,12 +161,12 @@
 		margin-bottom: 6px;
 
 		&::placeholder {
-			color:rgba(255, 0, 0, 0.7);
+			color: rgba(255, 0, 0, 0.7);
 		}
 	}
-	
+
 	.error {
-		color: red
+		color: red;
 	}
 }
 
@@ -176,7 +178,7 @@
 	}
 
 	.error {
-		color:rgba(255, 0, 0, 0.7);
+		color: rgba(255, 0, 0, 0.7);
 	}
 
 	.input {
@@ -192,10 +194,10 @@
 	min-height: 32px;
 
 	.input {
-		min-height: 32px
+		min-height: 32px;
 	}
 	.password {
-		min-height: 32px
+		min-height: 32px;
 	}
 }
 
@@ -203,10 +205,10 @@
 	min-height: 40px;
 
 	.input {
-		height: 40px
+		height: 40px;
 	}
 	.password {
-		height: 40px
+		height: 40px;
 	}
 }
 
@@ -227,7 +229,7 @@
 
 .borders {
 	.input {
-		border: 2px solid #222;
+		border: 2px solid $dark;
 	}
 }
 

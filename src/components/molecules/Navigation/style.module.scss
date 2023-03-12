@@ -1,3 +1,5 @@
+@import './../../../index.scss';
+
 .NavigationContainer {
   height: 50px;
   display: flex;
@@ -8,6 +10,6 @@
     padding: 0 16px;
     font-size: 20px;
     text-decoration: none;
-    color: #046DB5;
+    color: $darkBlue;
   }
 }

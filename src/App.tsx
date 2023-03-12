@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
@@ -13,7 +12,8 @@ import Balance from './pages/balance/Balance';
 import MoneyTransfer from './pages/moneyTransfer/MoneyTransfer';
 
 const App = () => {
-  const { user, isAuthentication } = useUserStore((state) => state);
+  const { isAuthentication } = useUserStore((state) => state);
+
   const { loginControl } = useUserStore();
   useEffect(() => {
     loginControl();
@@ -26,7 +26,6 @@ const App = () => {
           isAuthentication ?
             <>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/balance" element={<Balance />} />
               <Route path="/money-transfer" element={<MoneyTransfer />} />
             </>

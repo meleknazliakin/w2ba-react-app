@@ -12,7 +12,6 @@ const LoginTemplate = () => {
     const { login } = useUserStore();
     const [loading, setLoading] = useState<boolean>(false);
 
-
     const formik = useFormik({
         initialValues: {
             email: '',
