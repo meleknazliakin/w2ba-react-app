@@ -20,6 +20,7 @@ const App = () => {
   }, []);
 
   return (
+    <div>
       <Routes>
         {
           isAuthentication ?
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/" element={<Login />} />
         }
       </Routes>
+    </div>
   );
 };
 
