@@ -36,9 +36,9 @@ const BalanceTemplate = () => {
         <Col lg={7} xs={12}>
           <form className={Styles.form} onSubmit={formik.handleSubmit}>
             <Input
-              id="creditCard"
-              name="creditCard"
-              type="creditCard"
+              id="creditCardNumber"
+              name="creditCardNumber"
+              type="creditCardNumber"
               label="Credit Card"
               value={formik.values.creditCardNumber}
               onChange={formik.handleChange}
